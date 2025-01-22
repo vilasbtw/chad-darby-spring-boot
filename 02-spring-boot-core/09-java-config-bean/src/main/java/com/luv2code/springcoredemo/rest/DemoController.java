@@ -14,7 +14,7 @@ public class DemoController {
     private Coach coach;
 
     @Autowired
-    public DemoController(@Qualifier("trackCoach") Coach coach) {
+    public DemoController(@Qualifier("swimCoach") Coach coach) {
         this.coach = coach;
     }
 
