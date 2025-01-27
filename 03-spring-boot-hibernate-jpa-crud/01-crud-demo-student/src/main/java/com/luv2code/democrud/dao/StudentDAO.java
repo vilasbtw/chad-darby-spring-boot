@@ -2,9 +2,15 @@ package com.luv2code.democrud.dao;
 
 import com.luv2code.democrud.entity.Student;
 
+import java.util.List;
+
 public interface StudentDAO {
 
-    public void save(Student student);
+    void save(Student student);
 
-    public Student findById(int id);
+    Student findById(int id);
+
+    List<Student> findAll();
+
+    List<Student> findByLastName(String lastName);
 }
