@@ -20,7 +20,7 @@ public class DemocrudApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			findByLastName(studentDAO);
+			findAll(studentDAO);
 		};
 	}
 
@@ -51,5 +51,12 @@ public class DemocrudApplication {
 		for (Student s : students) {
 			System.out.println(s);
 		}
+	}
+
+	public void update(StudentDAO studentDAO) {
+		Student student = studentDAO.findById(1);
+		student.setFirstName("Scooby");
+		studentDAO.update(student);
+		System.out.println(student);
 	}
 }
